@@ -40,10 +40,11 @@
 <script setup>
 import { ref } from "vue"
 
-const isExpanded = ref(false)
+const isExpanded = ref(localStorage.getItem("isExpanded") === "true")
 
 const toggleMenu = () => {
   isExpanded.value = !isExpanded.value
+  localStorage.setItem("isExpanded", isExpanded.value)
 }
 </script>
 
